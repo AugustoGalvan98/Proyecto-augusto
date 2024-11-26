@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:darkgray;
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "header header header"
+                         "contenido contenido sidebar"
+                         "widget-1 widget-2 sidebar"
+                         "footer footer footer"; 
+                    
+            
+}
+
+
+
+
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer{
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header{
+    background: black;
+    color: white;
+    grid-area: header;
+}
+
+.contenedor .contenido{
+    grid-area: contenido;
+}
+.contenedor .sidebar{
+    grid-column: 3 ;
+    grid-area: sidebar;
+    background-color: lightgray;
+    display: grid;
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto ;
+    text-align: center;
+    align-items: center;
+}
+
+.sidebar >div :hover{
+    background-color: grey;
+}
+
+
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background-color:cadetblue;
+    color: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor .widget-1{
+    grid-area: widget-1;
+}
+.contenedor .widget-2{
+    grid-area: widget-2;
+}
+
+.contenedor .footer{
+    background-color:darkslategrey;
+    color: white;
+    grid-area: footer;
+}
+
+
+
+
+/*
+@media screen and (max-width: 768px){
+    body{
+        background-color: lightgreen;
+    }
+
+    .contenedor .contenido{
+        grid-column: span 3;
+    }
+
+    .contenedor .sidebar{
+        grid-column: span 3;
+    }
+    .contenedor .widget-1{
+        grid-column: span 2;
+    }
+    
+}*/
